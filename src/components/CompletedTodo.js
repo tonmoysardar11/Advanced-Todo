@@ -10,7 +10,7 @@ const CompletedTodo = () => {
         {done.length !== 0 ? done.map((element) => {
           return <div className="todoitem" key={element.id}>
           <input type="checkbox" onChange={() => check(element)} checked={element.checked} />
-          <label className='todoname form-label'>{element.checked?<del>{element.name}</del>:element.name}</label><button className="btn btn-danger btn-sm" onClick={() => remove(element.id)}>Delete</button>
+          <label className='todoname form-label'>{element.name}</label><button className="btn btn-danger btn-sm" onClick={() => remove(element.id)}>Delete</button>
       </div>
         }) : <h6 className='text-center my-4'>Complete Tasks To Add Them Here</h6>}
       </div>
