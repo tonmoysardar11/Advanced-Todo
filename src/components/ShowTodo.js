@@ -8,8 +8,6 @@ const ShowTodo = () => {
 
     return (
         <>
-                <h3 className='text-center'>Your Todos</h3>
-                <hr />
             <div className='display'>
                 {todolist.length !== 0 ? todolist.map((element) => {
                     return <div className="todoitem" key={element.id}>

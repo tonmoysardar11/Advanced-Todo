@@ -6,8 +6,6 @@ const CompletedTodo = () => {
   const { done, completed, total,remove, check,clearCompleted } = output;
   return (
     <>
-      <h3 className='text-center'>Completed</h3>
-      <hr />
       <div className='display'>
         {done.length !== 0 ? done.map((element) => {
           return <div className="todoitem" key={element.id}>

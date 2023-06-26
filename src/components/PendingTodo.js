@@ -6,8 +6,6 @@ const PendingTodo = () => {
   const { notdone, completed, total,remove, check } = output;
   return (
     <>
-      <h3 className='text-center'>Pending</h3>
-      <hr />
       <div className='display'>
         {notdone.length !== 0 ? notdone.map((element) => {
           return <div className="todoitem" key={element.id}>

@@ -12,14 +12,15 @@ function App() {
     <TodoState>
     <div className="app">
       <CreateTodo/>
+      <hr />
       <HashRouter>
+      <Nav/>
       <Routes>
         <Route exact path='/' element={<ShowTodo/>}/>
         <Route exact path='/completed' element={<CompletedTodo/>}/>
         <Route exact path='/pending' element={<PendingTodo/>}/>
       </Routes>
       <hr />
-      <Nav/>
       </HashRouter>
 
 
