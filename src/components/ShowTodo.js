@@ -12,12 +12,12 @@ const ShowTodo = () => {
                 {todolist.length !== 0 ? todolist.map((element) => {
                     return <div className="todoitem" key={element.id}>
                         <input type="checkbox" onChange={() => check(element)} checked={element.checked} />
-                        <label className='todoname form-label'>{element.checked?<del>{element.name}</del>:element.name}</label><button className="btn btn-danger btn-sm" onClick={() => remove(element.id)}>Delete</button>
+                        <label className='todoname form-label'>{element.checked ? <del>{element.name}</del> : element.name}</label><button className="btn btn-danger btn-sm" onClick={() => remove(element.id)}>Delete</button>
                     </div>
-                }) : <h6 className='text-center my-4'>Nothing to Display. Try Adding Some.</h6> }
+                }) : <h6 className='text-center my-4'>Nothing to Display. Try Adding Some.</h6>}
             </div>
-                <hr />
-                <h6 className='text-center'>{completed}/{total} Completed</h6>
+            <hr />
+            <h6 className='text-center'>{completed}/{total} Completed</h6>
         </>
 
     )

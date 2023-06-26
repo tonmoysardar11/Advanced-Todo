@@ -3,7 +3,7 @@ import todoContext from '../context/todoContext';
 
 const CreateTodo = () => {
     const output = useContext(todoContext);
-    const { changeTodo, submit, todo,disable } = output;
+    const { changeTodo, submit, todo, disable } = output;
 
 
     return (
