@@ -13,7 +13,6 @@ const TodoState = (props) => {
 
     const changeTodo = (e) => {
         todo.name.length>1?setdisable(false):setdisable(true)
-        console.log(todo.name.length)
         let key = Date.now().toString();
         settodo({ ...todo, [e.target.name]: e.target.value, id: key });
     }
@@ -34,6 +33,10 @@ const TodoState = (props) => {
                 count += 1;
             }
         });
+        let completedtodo=newlist.filter(element=>element.checked===true)
+        let pendingtodo=newlist.filter(element=>element.checked===false)
+        setnotdone(pendingtodo)
+        setdone(completedtodo)
         settodolist(newlist)
         setcompleted(count);
         settotal(newlist.length)
@@ -47,16 +50,23 @@ const TodoState = (props) => {
         });
         let completedtodo=newlist.filter(element=>element.checked===true)
         let pendingtodo=newlist.filter(element=>element.checked===false)
-        console.log(completedtodo,pendingtodo)
         setnotdone(pendingtodo)
         setdone(completedtodo)
         setcompleted(completedtodo.length);
         settodolist(newlist);
     }
+    const clearCompleted=()=>{
+        setdone([]);
+        let list=todolist.filter(element=>element.checked!==true)
+        console.log(list)
+        settodolist(list);
+        settotal(list.length)
+        setcompleted(0)
+    }
 
 
     return (
-        <todoContext.Provider value={{ changeTodo, submit, total, todo, todolist, completed, remove, check, done, notdone,disable,setdisable }}>
+        <todoContext.Provider value={{ changeTodo, submit, total, todo, todolist, completed, remove, check, done, notdone,disable,setdisable,clearCompleted }}>
             {props.children}
         </todoContext.Provider>
     )
