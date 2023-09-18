@@ -8,8 +8,9 @@ const CreateTodo = () => {
 
     return (
         <>
+        
             <form className='my-3'>
-                <input type="text" name="name" id="todo" className="form-control" placeholder='Enter Your Todo' onChange={changeTodo} value={todo.name} />
+                <input type="text" name="name" id="todo" className="form-control" placeholder='Enter Your Todo (min 3 chars)' onChange={changeTodo} value={todo.name} />
                 <button onClick={submit} disabled={disable} className='btn btn-info'>Add</button>
             </form>
         </>
